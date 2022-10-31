@@ -9,7 +9,7 @@ class Product extends Model {}
 Product.init(
   {
     id: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
@@ -19,14 +19,14 @@ Product.init(
       allowNull: false,
     },
     price: {
-      type: DataType.DECIMAL, //? correct way to do this?
+      type: DataTypes.DECIMAL, //? correct way to do this?
       allowNull: false,
       validate: {
         isDecimal: true
       }
     },
     stock: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 10,
       validate: {
@@ -34,7 +34,7 @@ Product.init(
       }
     }, 
     category_id: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model: 'category',
         key: 'id',
