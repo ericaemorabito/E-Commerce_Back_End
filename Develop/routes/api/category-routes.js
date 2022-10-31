@@ -2,10 +2,9 @@ const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
-//!Tested and working
+
+// Get all categories with associated products
 router.get('/', async (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
   try {
     const categoryData = await Category.findAll({
       include: [{ model: Product }]
@@ -15,10 +14,9 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-//!Tested and working
+
+// Get category by id with associated products
 router.get('/:id', async (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       include: [{ model: Product }]
@@ -35,7 +33,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-//? Need help to test
+//! Need help to test
 router.post('/', async (req, res) => {
   // create a new category
   try {
@@ -46,7 +44,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-//? How can I test
+//! How can I test
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try {
@@ -61,7 +59,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-//! Tested and working
+// Delete category by it's id
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
