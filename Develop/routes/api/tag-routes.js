@@ -45,7 +45,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-//! Help with
 // Update tag by `id` value
 router.put('/:id', async (req, res) => {
   try {
@@ -54,13 +53,12 @@ router.put('/:id', async (req, res) => {
         id: req.params.id
       }
     })
-    res.status(400).json(tagData);
+    res.status(200).json(tagData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-//! not working 500 & 400 error
 // Delete on tag by its `id` value
 router.delete('/:id', async (req, res) => {
   try {
@@ -77,6 +75,7 @@ router.delete('/:id', async (req, res) => {
 
     res.status(200).json(tagData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });

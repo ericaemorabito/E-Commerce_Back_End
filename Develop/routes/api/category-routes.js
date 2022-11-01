@@ -33,7 +33,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-//! Need help to test
+
 router.post('/', async (req, res) => {
   // create a new category
   try {
@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-//! How can I test
+
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try {
